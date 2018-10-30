@@ -1,5 +1,3 @@
-﻿CREATE TYPE estiloType AS ENUM ('Rock', 'Pop', 'Sertanejo');
-
 CREATE TABLE Banda (
 	nome varchar(50),
 	localOrigem varchar(50),
@@ -17,7 +15,7 @@ CREATE TABLE Integrantes (
 
 CREATE TABLE Album (
 	id serial,
-	estilo estiloType,
+	estilo varchar(50),
 	banda varchar(50),
 	anoLancamento date,
 

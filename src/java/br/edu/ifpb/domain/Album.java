@@ -4,7 +4,7 @@ import java.time.LocalDate;
 
 public class Album {
     
-    private int id = -1;
+    private int id;
     private Estilo estilo;
     private Banda banda;
     private LocalDate anoLancamento;
