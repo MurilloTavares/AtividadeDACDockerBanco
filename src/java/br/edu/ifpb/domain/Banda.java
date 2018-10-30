@@ -6,12 +6,12 @@ public class Banda {
     
     private String nome;
     private String localOrigem;
-    private List<String> integrantes;
+    private List<Integrante> integrantes;
 
     public Banda() {
     }
 
-    public Banda(String nome, String localDeOrigem, List<String> integrates) {
+    public Banda(String nome, String localDeOrigem, List<Integrante> integrates) {
         this.nome = nome;
         this.localOrigem = localDeOrigem;
         this.integrantes = integrates;
@@ -33,11 +33,11 @@ public class Banda {
         this.localOrigem = localOrigem;
     }
 
-    public List<String> getIntegrantes() {
+    public List<Integrante> getIntegrantes() {
         return integrantes;
     }
 
-    public void setIntegrantes(List<String> integrantes) {
+    public void setIntegrantes(List<Integrante> integrantes) {
         this.integrantes = integrantes;
     }
 

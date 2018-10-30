@@ -1,9 +1,12 @@
 package br.edu.ifpb.servlets;
 
 import br.edu.ifpb.dao.BandaDAO;
+import br.edu.ifpb.dao.IntegranteDAO;
 import br.edu.ifpb.domain.Banda;
+import br.edu.ifpb.domain.Integrante;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.logging.Level;
@@ -25,13 +28,16 @@ public class SalvarBandaServlet extends HttpServlet {
         
         String integrantesInput = req.getParameter("integrantes");        
         String[] arrayIntegrantes = integrantesInput.split(",");
-        List<String> integrantes = Arrays.asList(arrayIntegrantes);
+        List<Integrante> integrantes = parseIntegrantes(arrayIntegrantes);
+        
         
         Banda banda = new Banda(nome, localOrigem, integrantes);
         
-        BandaDAO dao = new BandaDAO();
+        BandaDAO bandaDao = new BandaDAO();
+        IntegranteDAO integranteDao = new IntegranteDAO();
         try {
-            dao.salvar(banda);
+            bandaDao.salvar(banda);
+            integranteDao.salvarAll(banda);
             req.setAttribute("msg", "Banda salva com sucesso.");
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
@@ -41,6 +47,14 @@ public class SalvarBandaServlet extends HttpServlet {
         req.getRequestDispatcher("salvarBanda.jsp").forward(req, resp);        
     }
 
-    
+    private List<Integrante> parseIntegrantes(String[] nomes){
+        List<Integrante> integrantes = new ArrayList<>();
+        for(String nome : nomes){
+            Integrante i = new Integrante(nome);
+            integrantes.add(i);
+        }
+        
+        return integrantes;
+    }
     
 }
