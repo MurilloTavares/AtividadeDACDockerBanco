@@ -9,7 +9,7 @@ public class ConnectionFactory {
  
     private static final String USER = "postgres";
     private static final String PASS = "1234";
-    private static final String HOST = "localhost";
+    private static final String HOST = "host-banco";
     private static final String PORT = "5432";
     private static final String DATABASE = "teste";
     private static final String URL = "jdbc:postgresql://"+HOST+":"+PORT+"/"+DATABASE;

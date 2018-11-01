@@ -6,7 +6,6 @@ import br.edu.ifpb.domain.Album;
 import br.edu.ifpb.domain.Banda;
 import br.edu.ifpb.domain.Estilo;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.logging.Level;
@@ -41,9 +40,12 @@ public class SalvarAlbumServlet extends HttpServlet {
         AlbumDAO albumDao = new AlbumDAO();
         try {
             albumDao.salvar(album);
+            req.setAttribute("msg", "Album salvo com sucesso.");
         } catch (SQLException ex) {
             Logger.getLogger(SalvarAlbumServlet.class.getName()).log(Level.SEVERE, null, ex);
+            req.setAttribute("msg", ex.getMessage());
         }
+        req.getRequestDispatcher("salvarAlbum.jsp").forward(req, resp);
 
     }
 
