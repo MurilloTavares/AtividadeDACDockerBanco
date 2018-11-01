@@ -13,21 +13,36 @@
         <%
             List<Album> albums = (List<Album>)request.getAttribute("albums");
         %>
+        ${msg}
         <table>
                 <tr>
+                    <td> - </td>
                     <td>ID</td>
                     <td>Estilo</td>
                     <td>Banda</td>
                     <td>Lancamento</td>
+                    <td> - </td>
                 </tr>
                 
                 <% for(Album a : albums){ %>
                     <tr>
+                        <td>
+                            <form action="atualizarServlet" method="GET">
+                                <input type="hidden" value="<%= a.getId() %>" name="id" />
+                                <input type="submit" value="Atualizar" />
+                            </form>                            
+                        </td>
                         <td><%= a.getId() %></td>
                         <td><%= a.getEstilo().name() %></td>
                         <td><%= a.getBanda().getNome() %></td>
                         <td><%= a.getAnoLancamento() %></td>
-                    </tr>           
+                        <td>
+                            <form action="listarServlet" method="POST" >
+                                <input type="hidden" value="<%= a.getId() %>" name="id"/>
+                                <input type="submit" value="Deletar" />
+                            </form>                            
+                        </td>
+                    </tr>          
                 <% } %>                
         </table>
         

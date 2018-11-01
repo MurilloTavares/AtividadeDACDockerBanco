@@ -16,8 +16,10 @@
             <file>file:/home/murillo/NetBeansProjects/DockerBanco/web/listagem.jsp</file>
             <file>file:/home/murillo/NetBeansProjects/DockerBanco/src/java/br/edu/ifpb/servlets/SalvarBandaServlet.java</file>
             <file>file:/home/murillo/NetBeansProjects/DockerBanco/web/salvarAlbum.jsp</file>
+            <file>file:/home/murillo/NetBeansProjects/DockerBanco/web/atualizarAlbum.jsp</file>
             <file>file:/home/murillo/NetBeansProjects/DockerBanco/src/java/br/edu/ifpb/domain/Estilo.java</file>
             <file>file:/home/murillo/NetBeansProjects/DockerBanco/web/index.html</file>
+            <file>file:/home/murillo/NetBeansProjects/DockerBanco/src/java/br/edu/ifpb/servlets/AtualizarServlet.java</file>
             <file>file:/home/murillo/NetBeansProjects/DockerBanco/src/java/br/edu/ifpb/dao/IntegranteDAO.java</file>
         </group>
     </open-files>

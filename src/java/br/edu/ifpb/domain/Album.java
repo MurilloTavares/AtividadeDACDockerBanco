@@ -56,5 +56,10 @@ public class Album {
     public void setAnoLancamento(LocalDate anoLancamento) {
         this.anoLancamento = anoLancamento;
     }
+
+    @Override
+    public String toString() {
+        return "Album{" + "id=" + id + ", estilo=" + estilo + ", banda=" + banda + ", anoLancamento=" + anoLancamento + '}';
+    }
     
 }
